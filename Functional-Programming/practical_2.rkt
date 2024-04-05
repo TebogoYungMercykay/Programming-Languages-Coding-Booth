@@ -35,3 +35,21 @@
 (newline)
 
 ; Answer from terminal : 4
+
+; Task 3
+
+(define (getEveryEvenElement lst)
+  (define (helper lst index result)
+    (cond
+      ((null? lst) result)
+      ((= (remainder index 2) 0)
+        (helper (cdr lst) (+ index 1) (cons (car lst) result)))
+      (else
+        (helper (cdr lst) (+ index 1) result))))
+ 
+  (helper lst 1 '()))
+
+; Example usage:
+(display (getEveryEvenElement '(a b c d)))
+(newline)
+; Answer from terminal : (d b)
