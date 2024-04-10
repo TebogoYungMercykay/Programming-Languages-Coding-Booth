@@ -22,6 +22,8 @@
   Expected Answer: 32.182857142857145
 |#
 
+(display "TAST 1")
+(newline)
 (display (circleArea 3.2))
 (newline)
 
@@ -53,6 +55,8 @@
   Expected Answer: 5
 |#
 
+(display "TAST 2")
+(newline)
 (display (countDivisors 20 '(1 20 30 2 5 40 10 60)))
 (newline)
 
@@ -80,5 +84,7 @@
   Expected Answer: (b d t)
 |#
 
+(display "TAST 3")
+(newline)
 (display (getEveryEvenElement '(a b c d r t)))
 (newline)
