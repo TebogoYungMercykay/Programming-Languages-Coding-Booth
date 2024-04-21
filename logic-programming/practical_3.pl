@@ -24,6 +24,7 @@ wanderingPet(P) :- householdPet(O1, O2, P), householdPet(O3, O4, P),
     (O1 \= O3, O2 \= O4, O1 \= O4, O2 \= O3).
 
 
+
 % TASK 2
 
 
@@ -47,6 +48,7 @@ addPositives(List, X) :-
     \+ positive(H),
     append(_, [H|T], List),
     addPositives(T, X).
+
 
 
 % TASK 3
