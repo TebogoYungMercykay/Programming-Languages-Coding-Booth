@@ -1,4 +1,3 @@
-
 # SWI-Prolog Project
 
 This project contains Prolog code demonstrating the use of facts and rules.
@@ -6,7 +5,6 @@ This project contains Prolog code demonstrating the use of facts and rules.
 ## Creating Prolog Code
 
 1. Create a new file with a `.pl` extension. This is the standard extension for Prolog files. For example, `example.pl`.
-
 2. Open the file in a text editor and write your Prolog code. For example:
 
 ```prolog
@@ -39,6 +37,4 @@ This will check if Jim and Ann are siblings according to the defined facts and r
 
 4. To exit the Prolog environment, use the `halt.` command.
 
-```
 This README provides instructions on how to create a Prolog file, write Prolog code, and run the code using the SWI-Prolog environment.
-```
