@@ -41,6 +41,10 @@ This README provides instructions on how to create a Prolog file, write Prolog c
 
 ## Food For Thought:
 
+- ### `Functional Programming`
+
+![Fuctions](../images/functional.png)
+
 - ### `Predicate Calculus:Logical Operators`
 
 ![Logical Operators](../images/logical_operators.png)
