@@ -1,7 +1,11 @@
 ; Functional Programming
 #lang sicp
 
-(define testingLambda (lambda (x y) (> x y)))
+(define (isNegative x)
+  (negative? x)
+)
 
-(display (testingLambda 3 1))
-(newline)
+(define (isEven x)
+  (even? x)
+)
+
