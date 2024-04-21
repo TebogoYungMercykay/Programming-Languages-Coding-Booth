@@ -30,22 +30,43 @@ wanderingPet(P) :- householdPet(O1, O2, P), householdPet(O3, O4, P),
 % Helper method
 positive(X) :- X >= 1.
 
-% Sum whem list is empty
+% Returning Zero For Empty List
 addPositives([], 0).
 
-% If a member is positive, add it to the sum of rest of list
-addPositives(List, X) :- member(H, List), positive(H),
+% Adding All Members Which Are Natural numbers
+addPositives(List, X) :-
+    member(H, List),
+    positive(H),
     append(_, [H|T], List),
     addPositives(T, X1),
     X is X1 + H.
 
-% If a member is not positive, ignore it and sum rest of list
-addPositives(List, X) :- member(H, List), \+ positive(H),
+% Ignoring All Members Which Are Not Natural numbers
+addPositives(List, X) :-
+    member(H, List),
+    \+ positive(H),
     append(_, [H|T], List),
     addPositives(T, X).
 
 
-% TASK 2
+% TASK 3
 
 
-% Helper method
+% Determining If The List Contains a Single Element
+singleElement([_]).
+secondElement([_, Second|_], Second).
+
+% Retrieving Every Second Element From the Input List
+getEverySecondValue([], []).
+getEverySecondValue([_], []).
+
+getEverySecondValue(InputList, Result) :-
+    singleElement(InputList),
+    Result = [].
+
+getEverySecondValue([_, Second|_], [Second]) :-
+    singleElement([_, Second]).
+
+getEverySecondValue([_, Second|Tail], [Second|Result]) :-
+    secondElement([_, Second|Tail], Second),
+    getEverySecondValue(Tail, Result).
