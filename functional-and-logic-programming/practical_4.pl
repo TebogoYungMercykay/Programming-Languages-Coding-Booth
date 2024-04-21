@@ -1,6 +1,16 @@
-% Defining facts
-parent(john, jim).
-parent(john, ann).
+% Logic Programming
 
-% Defining rules
-sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.
+
+% Helper predicates
+isNegative(X) :- X < 0.
+isZero(X) :- X =:= 0.
+isPositive(X) :- X > 0.
+
+% Returning Empty List For Empty List Input
+stripNegativesAndZerosDuplicatePositives([], []).
+
+stripNegativesAndZerosDuplicatePositives([H|T], X) :- (isNegative(H) ; isZero(H)),  
+    stripNegativesAndZerosDuplicatePositives(T, X).
+
+stripNegativesAndZerosDuplicatePositives([H|T], [H,H|X]) :- isPositive(H),  
+    stripNegativesAndZerosDuplicatePositives(T, X).

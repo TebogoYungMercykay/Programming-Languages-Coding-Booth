@@ -1,3 +1,5 @@
+% Logic Programming
+
 % Defining facts
 parent(john, jim).
 parent(john, ann).
