@@ -58,3 +58,15 @@
 (display "Actual Output: ")
 (display (stripNegativesDuplicateEvens '(-2 -5 4 -5 1 2 -2 3 -3 4 5 -6)))
 (newline)
+
+(display (stripNegativesDuplicateEvens '()))
+(newline)
+
+(display (stripNegativesDuplicateEvens '(-6 -1)))
+(newline)
+
+(display (stripNegativesDuplicateEvens '(6 8)))
+(newline)
+
+(display (stripNegativesDuplicateEvens '(4 -1 9)))
+(newline)
