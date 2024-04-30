@@ -1,7 +1,7 @@
 main:
 	cobc -x -o hello_cobol practical_5.cob
 
-fotran:
+fortran:
 	gfortran -o hello_fortran practical_5.f
 
 run:
