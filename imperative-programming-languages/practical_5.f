@@ -1,4 +1,3 @@
-program hello
-    ! This is a comment line; it is ignored by the compiler
-    print *, 'Hello, World!'
-end program hello
+000100 program hello
+000200     print *, 'Hello, World!'
+000300 end program hello
