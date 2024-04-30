@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Ignoring Executables
+hello_cobol
+hello_fortran
