@@ -17,9 +17,9 @@
 ### Example Codes
 - **Fortran Code (hello.f)**:
     ```fortran
-    program hello
-        print *, "Hello, Fortran!"
-    end program hello
+    000100 program hello
+    000200     print *, 'Hello, World!'
+    000300 end program hello
     ```
 
 - **COBOL Code (hello.cob)**:
