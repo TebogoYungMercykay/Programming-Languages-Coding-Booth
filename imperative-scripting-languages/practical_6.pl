@@ -20,6 +20,8 @@ if (@ARGV != 2) {
     
         my $count = () = $reversedContent =~ /$word/g;
     
+        print "Converted String: $fileContent\n";
+        print "Reversed Word: $reversedContent\n";
         print "Matches: $count\n";
     } else {
         print "File not found.\n";
