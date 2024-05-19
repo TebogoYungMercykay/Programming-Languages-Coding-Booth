@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+*.zip
 
 # Ignoring Executables
 hello_cobol
