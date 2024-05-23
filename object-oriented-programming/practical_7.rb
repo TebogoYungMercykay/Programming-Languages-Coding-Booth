@@ -94,12 +94,14 @@ end
 loop do
     puts "Enter 'y' to pay teams for another month of work, 'n' to end payments:"
     choice = gets.chomp
-    if choice == 'n'
-        break
-    end
-    teams.each do |team|
-        team.payTeam
-        team.newMonth
+    if choice == 'y' || choice == 'n'
+        teams.each do |team|
+            team.payTeam
+            team.newMonth
+        end
+        break if choice == 'n'
+    else
+        puts "Invalid input. Please enter 'y' or 'n'."
     end
 end
 
