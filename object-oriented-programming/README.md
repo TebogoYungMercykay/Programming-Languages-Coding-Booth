@@ -2,23 +2,38 @@
 
 This Ruby code defines a simple system for managing a team of employees, including managers and programmers. Each employee has a base salary and earnings, which can be updated each month.
 
-# Classes
+# Explanation:
 
-### Employee
+1. **Employee Class**:
+   - Contains `@earnings`, `@base_salary`, and `@base_salary_paid` as instance variables.
+   - The constructor initializes `@earnings` to 0, sets `@base_salary`, and `@base_salary_paid` to `false`.
+   - `payEmployee` method pays the base salary if it hasn't been paid for the month.
+   - `newMonth` method resets the `@base_salary_paid` flag.
 
-The `Employee` class is the base class for all employees. It has an `earnings` attribute and methods to pay the employee (`payEmployee`) and to start a new month (`newMonth`).
+2. **Manager Class**:
+   - Inherits from `Employee`.
+   - Adds `@bonus` as an additional instance variable.
+   - Overrides `payEmployee` to add the bonus to the earnings every time it's called.
 
-### Manager
+3. **Programmer Class**:
+   - Inherits from `Employee`.
+   - The constructor takes a percentage, calculates the base salary, and calls the parent constructor with this value.
 
-The `Manager` class inherits from `Employee`. It adds a bonus to the base salary when the manager is paid.
+4. **Team Class**:
+   - Manages a list of employees (`@members`).
+   - `addMember` method adds an employee to the team, enforcing a maximum of 2 members.
+   - `payTeam` method calls `payEmployee` on all team members.
+   - `newMonth` method resets the month for all team members.
+   - `printEarnings` method prints the earnings of all team members.
 
-### Programmer
+5. **Test Code**:
+   - Prompts the user for manager's bonus and creates a manager.
+   - Adds the manager to two teams.
+   - Prompts the user for programmer percentages for each team and adds a programmer to each team.
+   - Loops to pay the teams for each month until the user decides to stop.
+   - Prints the earnings for all team members at the end.
 
-The `Programmer` class also inherits from `Employee`. It allows for a variable base salary, which is a percentage of a standard amount.
-
-### Team
-
-The `Team` class manages a team of employees. It has methods to add a member to the team (`addMember`), pay all team members (`payTeam`), start a new month for all team members (`newMonth`), and print the earnings of all team members (`printEarnings`).
+This implementation ensures that the manager receives the correct bonuses and base salary, and programmers are paid according to the specified percentage of the base salary. The design adheres to object-oriented principles by using inheritance and encapsulation effectively.
 
 # Running Ruby Code
 
