@@ -21,3 +21,17 @@ class Employee
         @baseSalaryPaid = false
     end
 end
+
+class Manager < Employee
+    # Manager class
+    def initialize(bonus)
+        super()
+        @bonus = bonus
+    end
+
+    def payEmployee
+        super
+        @earnings = @earnings + @bonus
+    end
+end
+
