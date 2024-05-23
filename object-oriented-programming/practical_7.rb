@@ -35,3 +35,10 @@ class Manager < Employee
     end
 end
 
+class Programmer < Employee
+    # Programmer class
+    def initialize(percentage)
+        baseSalary = 20000.00 * percentage
+        super(baseSalary)
+    end
+end
