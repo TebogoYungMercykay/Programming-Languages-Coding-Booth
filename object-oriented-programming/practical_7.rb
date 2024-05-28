@@ -12,6 +12,7 @@ class Employee
 
     def payEmployee
         if @baseSalaryPaid == false
+            puts "Paid Employee"
             @earnings = @earnings + @baseSalary
             @baseSalaryPaid = true
         end
@@ -30,8 +31,12 @@ class Manager < Employee
     end
 
     def payEmployee
-        super
+        super()
         @earnings = @earnings + @bonus
+    end
+
+    def getEarnings
+        @earnings
     end
 end
 
@@ -71,7 +76,7 @@ class Team
 
     def printEarnings
         @listOfEmployees.each do |member|
-            puts "Employee earnings: #{member.earnings}"
+            puts "Employee earnings: R#{member.earnings}"
         end
     end
 end
@@ -91,21 +96,33 @@ teams.each_with_index do |team, index|
     team.addMember(programmer)
 end
 
+months = 1;
+
 loop do
     puts "Enter 'y' to pay teams for another month of work, 'n' to end payments:"
     choice = gets.chomp
     if choice == 'y' || choice == 'n'
         teams.each do |team|
             team.payTeam
+            # team.newMonth
+        end
+
+        teams.each do |team|
+            # team.payTeam
             team.newMonth
         end
+
+        
         break if choice == 'n'
     else
         puts "Invalid input. Please enter 'y' or 'n'."
     end
+    months += 1
 end
 
 teams.each_with_index do |team, index|
     puts "Earnings for team member #{index + 1}:"
     team.printEarnings
 end
+
+# puts "Manager Records: #{teams[0].listOfEmployees[0].getEarnings} = #{teams[1].listOfEmployees[0].getEarnings - months*bonus*teams.length} + #{months*bonus*teams.length}"
